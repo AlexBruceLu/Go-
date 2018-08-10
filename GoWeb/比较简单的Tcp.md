@@ -1,13 +1,11 @@
 # TCP状态转换图
-![TCP状态转换图](C:\Users\lu_10\Desktop\TCP状态转换图.png)
+**主动发起连接请求端：** CLOSED——完成三次握手——ESTABLISHED(数据通信状态)——Dial()函数返回
 
-**主动发起连接请求端：**CLOSED——完成三次握手——ESTABLISHED(数据通信状态)——Dial()函数返回
+**被动发起连接请求端：** CLOSED——调用Accept()函数——Listen()——完成三次握手——ESTABLISHED(数据通信状态)——Accept()函数返回数据传递期间——ESTABLISHED(数据通信状态)
 
-**被动发起连接请求端：**CLOSED——调用Accept()函数——Listen()——完成三次握手——ESTABLISHED(数据通信状态)——Accept()函数返回数据传递期间——ESTABLISHED(数据通信状态)
+**主动关闭连接请求端：** ESTABLISHED(数据通信状态)——FIN_WAIT(半关闭)——TIME_WAIT——2MSL——确认最后一个ACK被对端成功接收。半关闭、TIME_WAIT、2MSL ——只会出现在 “主动关闭连接请求端”
 
-**主动关闭连接请求端：**ESTABLISHED(数据通信状态)——FIN_WAIT(半关闭)——TIME_WAIT——2MSL——确认最后一个ACK被对端成功接收。半关闭、TIME_WAIT、2MSL ——只会出现在 “主动关闭连接请求端”
-
-**被动关闭连接请求端：**ESTABLISEHED —— CLOSE
+**被动关闭连接请求端：** ESTABLISEHED —— CLOSE
 
 # TCP/CS并发服务器
 ```go
