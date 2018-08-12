@@ -32,5 +32,6 @@ func main()  {
 	}
 	conn.Write(buf[:n])		// 读多少写多少。原封不动
 	// 处理数据—— 打印
+
 	fmt.Println("服务器读到数据：", string(buf[:n]))
 }
