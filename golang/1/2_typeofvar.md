@@ -81,3 +81,36 @@ func main() {
 
     (0+1.2246467991473515e-16i)
     (0.000+0.000i)
+
+
+### 强制类型转换
+
+
+**go语言里面没有隐式类型转换,只能是显式类型转换:**
+
+
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func triangle()  {
+	var a,b int =3,4
+	var c int
+	c=int(math.Sqrt(float64(a*a+b*b)))
+	fmt.Println(c)
+}
+
+func main(){
+    triangler()
+}
+```
+
+
+***执行结果:***
+
+
+    5
