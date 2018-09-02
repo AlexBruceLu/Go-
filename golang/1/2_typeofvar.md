@@ -26,3 +26,51 @@
 |channel| |nil| 引⽤类型|
 |interface| |nil| 接⼝|
 |function| |nil| 函数|
+
+***
+
+
+* complex64(实部和虚部均为float32的复数)/complex128(实部和虚部均为float64的复数)
+
+
+$$i=\sqrt{-1}$$
+$$|3+4i|=\sqrt{3^2+4^2}=5$$
+$i^2=-1,i^3=-i,i^4=1...$
+
+***
+
+
+**欧拉公式**
+
+
+$e^{ipi}+1=0$
+
+
+**用go语言实现一下:**
+
+
+```go
+package main
+
+import (
+	"fmt"
+	"math/cmplx"
+	"math"
+)
+
+func Euler() {
+	fmt.Println(cmplx.Pow(math.E, 1i*math.Pi) + 1)
+    //由于浮点数不准确所以精确到三位小数
+	fmt.Printf("%.3f\n", cmplx.Exp(1i*math.Pi)+1)
+}
+
+func main() {
+	Euler()
+}
+```
+
+**执行结果:**
+
+
+    (0+1.2246467991473515e-16i)
+    (0.000+0.000i)
