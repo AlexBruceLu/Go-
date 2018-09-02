@@ -100,6 +100,7 @@ import (
 func triangle()  {
 	var a,b int =3,4
 	var c int
+    //math.Sqrt参数和返回值都是float64
 	c=int(math.Sqrt(float64(a*a+b*b)))
 	fmt.Println(c)
 }
